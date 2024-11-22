@@ -1,0 +1,337 @@
+.navbar {
+    /* Dark background */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .navbar-brand {
+    font-size: 24px; 
+    color: white;
+  }
+  
+  .nav-link {
+    color: #fff !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0); 
+  }
+  
+  .nav-link:hover {
+    color: black !important;  
+    border-bottom: 2px solid black;
+  }
+ .myresumebtn{
+  background-color: #040404;
+  color: #fff;
+  border-radius: 5px;
+ }
+ .myresumebtn:hover{
+  background-color: #fff;
+  color: black !important;  
+  border-bottom: 2px solid black;
+  
+ }
+  /* -----------------------------------> Home <----------------------------------------- */
+  .home{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  }
+  .upperdiv{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: 5px solid black;
+    padding: 25px;
+  }
+  .upperheading{
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  }
+  .imgarrow{
+     overflow: hidden;
+     
+  }
+  .imgarrow>img{
+    width: 100%;
+    transform: scale(2.5);
+    
+  }
+  .buttoncreate{
+    justify-self:center ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+  }
+  .buttoncreate>button{
+    width:40%;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    height: 50px;
+    font-size: medium;
+    font-weight: bold;
+  }
+  .buttoncreate>button:hover{
+    background-color: #fff;
+   border: 3px solid rgb(96, 92, 92);
+   color: black;
+  }
+ .imagediv{
+  height: max-content;
+  display: grid;
+ 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 30px; 
+  grid-template-columns: repeat(4 1fr);
+ }
+.img{
+  justify-self: center;
+  height: 250px;
+  object-fit:cover;
+}
+.img>img{
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+}
+
+
+  /* -----------------------------------About _-------------------------------------- */
+  .aboutdiv{
+    background-color: black;
+    
+  }
+  .about,.templates{
+    text-align: left;
+    padding: 30px;
+    height: fit-content;
+    color: #fff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; 
+  }
+  .about>p{
+    font-weight: normal;
+  }
+  .aboutdivimg>.img>img .aboutdivimg{
+    height: 450px;
+    padding-bottom: 10px;
+  }  
+
+  /* ---------------------------templates----------------------- */
+  .templates{
+    color: black;
+    font-weight: normal;
+  }
+  .resumediv{
+    border-bottom: 2px solid black;
+    height: fit-content;
+  }
+  .resumediv>.img{
+    height: fit-content;
+  }
+  .resumediv>.img>img{
+    height: 400px;
+  }
+
+  /* ----------------------------------services-------------------------------- */
+  .services{
+    text-align: left;
+    font-weight: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 25px;
+  }
+  .servicebtn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .servicebtn>button{
+   flex-shrink: 0;
+    flex-basis: 300px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: black;
+    border: 3px solid black;
+    margin-bottom: 10px;
+  }
+  .servicebtn>button:hover{
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+  }
+  button:disabled{
+    background-color: rgb(67, 66, 66);
+    cursor: not-allowed;
+    color: #fff;
+    opacity:0.5;
+  }
+  /* --------------------------------companies---------------------------- */
+  #companies{
+    background-color: rgb(156, 156, 156);
+  }
+  .company{
+    width: 100%;
+    text-align: center;
+    border-top: 4px solid black;
+  }
+  .company>h1{
+    text-align: start;
+  }
+  .company>p{
+    width: 70%;
+    text-align: left;
+  }
+  .companybtn{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .companybtn>img{
+    object-fit: contain;
+    flex-shrink: 0;
+    flex-basis: 150px;
+    height: 150px;
+  }
+  /* ----------------------------------Premium---------------------------- */
+  .premium>h1{
+    color: #cdad7d;
+  }
+  .premiummain{
+    background-image: url("../assets/blue-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+  .premiumbox{
+    border: 3px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 10px !important;
+    backdrop-filter: blur(50px);
+  }
+  .premiumbox>button{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  .premiumbox>button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(252, 251, 251);
+  }
+  .paymentmain{
+    width: 100%;
+   display: none;
+   padding: 20px;
+   background-color: #262525;
+  }
+
+  .payment>h1{
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .payment{
+    background-color: rgb(60, 60, 60);
+    color: white;
+    width: 70%;
+    border: 10px solid rgb(0, 0, 0);
+    display:grid;
+    grid-template-columns: repeat(1 ,1fr);
+    grid-template-rows: repeat(2,0.5fr);
+    gap: 5px;
+    justify-self: center;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .payment>input{
+    background-color: #040404;
+    color: #fff;
+    width: 80%;
+    height: 40px;
+    border-radius: 8px ;
+    border: 3px solid white;
+  }
+  .payment>button{
+    width: 40%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+   border: 2px solid black;
+    margin-top: 4px;
+    height: 40px;
+  }
+  .payment>input:hover{
+    color: #040404;
+    background-color: #fff;
+    border: 3px solid black;
+  }
+  .payment>button:hover{
+    color: #000000;
+    background-color: #616262;
+    border: 3px solid rgb(255, 255, 255);
+  }
+   .cardNumber{
+    
+   }
+  @media (max-width:750px){
+    .upperheading{
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }.upperdiv{
+      grid-template-rows: repeat(2, 0.5fr);
+    }
+    .buttoncreate{
+      grid-column: 1/3;
+      grid-row: 2/3;
+      padding: 0;
+    }
+    .about{
+      padding: 2px;
+    }
+    .aboutdivimg{
+      align-items: flex-start;
+      height: fit-content;
+    }
+    .templates{
+      padding: 0;
+    }
+    .templatesdiv{
+      height: fit-content;
+      grid-template-rows: repeat(2, 0.2fr);
+    }
+    .services{
+      padding: 10;
+    }
+    .company>p{
+      width: 100%;}
+      .companybtn>img{
+        flex-basis: 100px;
+      }
+    .payment{
+      width: 100%;
+    }
+    .payment>button{
+      width: 100%;
+    }
+    .payment>input{
+      width: 100%;
+    }
+  }
+  @media (min-width: 1300px){
+    .imagediv{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
