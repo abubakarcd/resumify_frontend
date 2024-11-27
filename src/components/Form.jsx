@@ -1,8 +1,9 @@
 import React from "react";
+import Info from "./formcomponents/info.jsx";
 
 
 function Form (){
-    return(<h1>hello</h1>)
+    return(<Info/>)
 }
 
 export default Form;

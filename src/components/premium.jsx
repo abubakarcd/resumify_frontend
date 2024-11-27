@@ -34,17 +34,17 @@ function Premium(){
                   </div>
                   
                 <div className=' paymentmain' id='paymentmain' style={{ display: display ? 'block' : 'none' }} ><div className='payment'><h1>Payment Details</h1>
-                   <label for="cardNumber" className='cardNumber' >Card Number:</label>
+                   <label htmlFor="cardNumber" className='cardNumber' >Card Number:</label>
                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required />
     
-                   <label for="cardName">Name on Card:</label>
+                   <label htmlFor="cardName">Name on Card:</label>
                    <input type="text" id="cardName" name="cardName" placeholder="John Doe" required />
     
-                    <label for="expiryDate">Expiry Date:</label>
+                    <label htmlFor="expiryDate">Expiry Date:</label>
                     <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required />
     
-                    <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required />
+                    <label htmlFor="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" maxLength="4" required />
     
                     <button onClick={paymentsubmission} >Submit Payment</button>
                 </div>
