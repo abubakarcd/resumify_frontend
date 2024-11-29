@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import  "../../style/form.css";
 import Info from "./info";
+import Education from "./Education";
 
-function Experience(){
+
+//experience of user 
+//1. User will enter its experience
+function Experience(props){
     const [back, setback]=useState(false);
     const [work,setwork]=useState([{title:"",company:"", date:"", responsibility:[]}]);
+    const [education , seteducation]=useState();
 
+    // function propss(){
+    //   console.log(props.userinfo);
+    // }
+    // useEffect(propss,[]);
     //go back to home page
   function goback(){
     setback(true);
@@ -34,15 +43,20 @@ function Experience(){
     setwork(workcopy);
     
   }
-  //delete work
+  //delete work experience
   function deletework(indexM){
     const workcopy=[...work];
     workcopy.splice(indexM,1);
     setwork(workcopy);
   }
 
-    return(<>
+  //save and continue to education
+    function toeducation(){
+      seteducation(true);
+    }
 
+    return(<>
+    {education?(<><Education/></>):<>
      {back?(<><Info/></>):
         <>
             {work.map((_,indexM)=>(
@@ -51,7 +65,7 @@ function Experience(){
                    <div className={` resume-header resume-header-${indexM} exp`}> 
                       <h2>Experience</h2>
                       {indexM>0&&(
-                      <button onClick={deletework}>Delete</button>)}
+                      <button className="deletework" onClick={()=>deletework(indexM)}>Delete</button>)}
                       {indexM==0&&(
                      <button className="back-button" onClick={goback}>Back</button>)}
                    </div>
@@ -102,7 +116,7 @@ function Experience(){
         
                     ))}
                      <div className={`resbtn resbtn-${indexM}`}>
-                           <button type="button" onClick={()=>addpoint(indexM)} className={`add-responsibility-button-${indexM}`}>
+                           <button type="button" onClick={()=>addpoint(indexM)} className={`add-responsibility-button-${indexM} save`}>
                               Add Responsibility
                            </button>
                      </div>
@@ -111,9 +125,13 @@ function Experience(){
                       <button type="button" className="save add-experience-button" onClick={addwork}>
                         Add Work Experience
                       </button>
-                      <button className="save">Save and Contiue</button>
+                      <button className="save" onClick={toeducation}>Save and Contiue</button>
         </>
         }
+      </>}
    </>)
 }
+
+
+
 export default Experience;

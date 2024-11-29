@@ -14,7 +14,7 @@
     margin-bottom: 20px;
   }
   
-  .back-button {
+  .back-button,.deleteeducation {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -142,7 +142,345 @@
   padding: 10px;
   justify-self: center;
 }
-.save:hover,.back-button:hover{
+.save:hover,.back-button:hover,.deletework:hover,.deleteeducation:hover{
   background-color: black;
   color: white;
+}
+
+/* education css --------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.education-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.education-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.add-education-button,
+.save-education-button {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  width: 50%;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-education-button:hover,
+.save-education-button:hover {
+  background-color: #0056b3;
+}
+
+.add-education-button:active,
+.save-education-button:active {
+  background-color: #003f7f;
+}
+
+.add-education-button {
+  background-color: #28a745;
+}
+
+.add-education-button:hover {
+  background-color: #218838;
+}
+
+.add-education-button:active {
+  background-color: #1e7e34;
+}
+.deleteeducation{
+  margin-bottom: 10px;
+}
+
+/* certification ----------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Container for the form */
+.certification-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Form Header */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+.form-header h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+/* Back Button */
+.form-header>.back-button, .form-header>.delete-button {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: fit-content;
+}
+
+.form-header>.back-button:hover,.form-header>.delete-button:hover {
+  background-color: #000000;
+}
+
+/* Form Inputs */
+.certification-form .input-group {
+  margin-bottom: 15px;
+}
+
+.certification-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.certification-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.certification-form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+.certification-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.certification-form button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.certification-form .add-button {
+  background-color: #28a745;
+}
+
+.certification-form .add-button:hover {
+  background-color: #218838;
+}
+
+.certification-form .save-button {
+  background-color: #007bff;
+}
+
+.certification-form .save-button:hover {
+  background-color: #0056b3;
+}
+/* projects..............>........>>>>>>>>>>>>>>>>>>>>>>.>>. */
+.projects-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Form Inputs */
+.projects-form .input-group {
+  margin-bottom: 15px;
+}
+
+.projects-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.projects-form input,
+.projects-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.projects-form input:focus,
+.projects-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+.projects-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.projects-form button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.projects-form .add-button {
+  background-color: #28a745;
+}
+
+.projects-form .add-button:hover {
+  background-color: #218838;
+}
+
+.projects-form .save-button {
+  background-color: #007bff;
+}
+
+.projects-form .save-button:hover {
+  background-color: #0056b3;
+}
+/* ------------>>>>>>>>>>>>>>>>>>>>>>>>>Skills>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.skills-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+
+/* Form Inputs */
+.skills-form .input-group {
+  margin-bottom: 15px;
+}
+
+.skills-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.skills-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.skills-form input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+.skills-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.skills-form button {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.skills-form .add-button {
+  background-color: #28a745;
+}
+
+.skills-form .add-button:hover {
+  background-color: #218838;
+}
+
+.skills-form .save-button {
+  background-color: #fdc704;
+  border: 3px solid black;
+}
+
+.skills-form .save-button:hover {
+  background-color: #ffb302;
+  border: 3px solid rgb(255, 255, 255);
 }
