@@ -28,6 +28,7 @@ function Education() {
   }
   //save and continue to certification section
   function tocertification() {
+    console.log(addeducation);
     setsave(true);
   }
 
@@ -58,7 +59,7 @@ function Education() {
                       >
                         Back
                       </button>
-                      <h2>Education Details</h2>
+                     
                     </>
                   )}
                   {index > 0 && (
@@ -70,7 +71,7 @@ function Education() {
                         Delete
                       </button>
                     </>
-                  )}
+                  )} <h2>Education Details {index+1}</h2>
                   <div className={`input-group-${index} input-group`}>
                     <label htmlFor={`education-${index} education`}>
                       Education:

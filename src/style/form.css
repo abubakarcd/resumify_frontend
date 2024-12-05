@@ -92,7 +92,10 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  
 }
+.main{border-bottom: 5px solid black;
+margin-bottom: 4px;}
 
 .input-group label {
   margin-bottom: 5px;
@@ -244,7 +247,7 @@
 }
 
 /* Back Button */
-.form-header>.back-button, .form-header>.delete-button {
+.back-button,.del{
   padding: 8px 12px;
   font-size: 14px;
   color: #fff;
@@ -253,13 +256,12 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  position: absolute;
   top: 20px;
   right: 20px;
   width: fit-content;
 }
 
-.form-header>.back-button:hover,.form-header>.delete-button:hover {
+.back-button:hover,.del:hover {
   background-color: #000000;
 }
 
@@ -298,7 +300,7 @@
   gap: 10px;
 }
 
-.certification-form button {
+.button-group-certification >button,.button-group-projects>button {
   flex: 1;
   padding: 10px;
   font-size: 16px;
@@ -306,24 +308,24 @@
   font-weight: bold;
   color: #fff;
   border: none;
+ margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-
-.certification-form .add-button {
+.add-button {
   background-color: #28a745;
 }
 
-.certification-form .add-button:hover {
+.add-button:hover {
   background-color: #218838;
 }
 
-.certification-form .save-button {
+.save-button {
   background-color: #007bff;
 }
 
-.certification-form .save-button:hover {
+.save-button:hover {
   background-color: #0056b3;
 }
 /* projects..............>........>>>>>>>>>>>>>>>>>>>>>>.>>. */
@@ -376,34 +378,6 @@
   gap: 10px;
 }
 
-.projects-form button {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s;
-}
-
-.projects-form .add-button {
-  background-color: #28a745;
-}
-
-.projects-form .add-button:hover {
-  background-color: #218838;
-}
-
-.projects-form .save-button {
-  background-color: #007bff;
-}
-
-.projects-form .save-button:hover {
-  background-color: #0056b3;
-}
 /* ------------>>>>>>>>>>>>>>>>>>>>>>>>>Skills>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 .skills-form-container {
   width: 100%;
@@ -452,35 +426,4 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-}
-
-.skills-form button {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.3s;
-}
-
-.skills-form .add-button {
-  background-color: #28a745;
-}
-
-.skills-form .add-button:hover {
-  background-color: #218838;
-}
-
-.skills-form .save-button {
-  background-color: #fdc704;
-  border: 3px solid black;
-}
-
-.skills-form .save-button:hover {
-  background-color: #ffb302;
-  border: 3px solid rgb(255, 255, 255);
 }

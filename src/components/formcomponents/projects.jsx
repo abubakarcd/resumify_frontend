@@ -1,63 +1,88 @@
 import React,{useState} from "react";
 import Skills from "./skills";
+import Certification from "./certification";
 
 function Projects() {
   const [save, setsave] = useState(false);
-
+  const [back , setback]=useState(false);
+  const [projects, setprojects]=useState([{project_name:"",project_description:"", project_date:""}])
+//save and continue
   function toskill() {
     setsave(true);
   }
+//go back to certification 
+function goback(){
+ setback(true);
+}
 
+//add porjects
+function addprojects(){
+  const projectcopy=[...projects];
+ projectcopy.push({project_name:"",project_description:"", project_date:""});
+  setprojects(projectcopy);
+ }
+ //delete projects
+ function deleteprojects(indexM) {
+  const projectcopy=[...projects];
+  projectcopy.splice(indexM, 1)
+   setprojects(projectcopy);
+ }
   return (
     <>
+    {back?(<Certification/>):(<>
       {save ? (
         <><Skills/></>
       ) : (
         <>
           <div className="projects-form-container">
-            <div className="form-header">
-              <h2>Project Details</h2>
-              <button className="back-button">Back</button>
-            </div>
 
             <form className="projects-form" onSubmit={toskill}>
-              <div className="input-group">
+              {projects.map((_,index)=>(<><div className="main" key={index} >
+            <div className={`form-header form-header-${index}`} >
+              <h2>Project Details {index+1}</h2>
+              {index===0 &&
+              <button className={`back-button`} onClick={goback}>Back</button>}
+              {index > 0 && <button type="button" className={`del del-${index}`} onClick={()=>deleteprojects(index)}>delete</button>}
+            </div>
+              <div className={`input-group input-group-${index}`}>
                 <label htmlFor="project-name">Project Name:</label>
                 <input
                   type="text"
-                  id="project-name"
-                  name="project-name"
+                  id={`project-name-${index} project-name `}
+                  name={`project-name-${index} project-name`}
                   placeholder="Enter the project name"
-                  required
+                 
                 />
               </div>
 
-              <div className="input-group">
-                <label htmlFor="description">Description:</label>
+              <div className={`input-group-${index} input-group`}>
+                <label htmlFor={`project_description-${index} project_description`}>Description:</label>
                 <textarea
-                  id="description"
-                  name="description"
+                  id={`project_description-${index} project_description` }
+                  name={`project_description-${index} project_description`}
                   placeholder="Enter the project description"
                   rows="4"
-                  required
+                  
                 />
               </div>
 
-              <div className="input-group">
-                <label htmlFor="date">Project Date:</label>
+              <div className={`input-group-${index} input-group`}>
+                <label htmlFor={`project_date-${index} `}>Project Date:</label>
                 <input
                   type="text"
                   maxLength={4}
                   placeholder="YYYY"
                   pattern="\d{4}"
-                  id="date"
-                  name="date"
-                  required
+                  id={`project_date-${index} project_date`}
+                  name={`project_date-${index} project_date`}
+                  
                 />
               </div>
+              </div>
+              </>))}
 
-              <div className="button-group">
-                <button className="add-button">Add Project</button>
+              <div className="button-group-projects">
+                <button type="button" className="add-button" onClick={addprojects}>Add Project</button>
                 <button className="save-button" type="submit">
                   Save
                 </button>
@@ -66,6 +91,7 @@ function Projects() {
           </div>
         </>
       )}
+      </>)}
     </>
   );
 }

@@ -5,7 +5,7 @@ import Education from "./Education";
 function Certification(){
     const [save,setsave]=useState(false);
     const [back,setback]=useState(false);
-    const [certificate,setcertificate]=useState([{name:"",organization:"", date:""}])
+    const [certificate,setcertificate]=useState([{certificate_name:"",certificate_organization:"", certificate_date:""}])
 //save and continue to projects
 function toprojects(){
    setsave(true);
@@ -14,10 +14,15 @@ function toprojects(){
 //add certification
 function addcertification(){
  const certificatecopy=[...certificate];
- certificatecopy.push({name:"",organization:"", date:""});
+ certificatecopy.push({certificate_name:"",certificate_organization:"", certificate_date:""});
  setcertificate(certificatecopy);
 }
-
+//delete certificate
+function deletecertificate(indexM) {
+  const certificatecopy=[...certificate];
+  certificatecopy.splice(indexM, 1);
+  setcertificate(certificatecopy);
+}
 
 //back button pressed to go back to education
 function goback(){
@@ -31,11 +36,11 @@ function goback(){
         <div className="certification-form-container">
 
           <form className="certification-form" onSubmit={toprojects}>
-            {certificate.map((_,index)=>(<>
-            <div className={`form-header form-header-${index}`}>
-            <h2>Certification Details {index}</h2>
-            {index===0 &&(<><button className="back-button" onClick={goback}>Back</button></>)}
-            {index>0 && (<button className="delete-button" onClick={goback}>Delete</button>)}
+            {certificate.map((_,index)=>(<><div className="main" key={index}>
+            <div className={`form-header form-header-${index}` } >
+            <h2>Certification Details {index+1}</h2>
+            {index===0 && (<button className="back-button" onClick={goback}>Back</button>)}
+            {index >0 && (<button className="del" onClick={()=>deletecertificate(index)}>Delete</button>)}
           </div>
             
                 
@@ -43,8 +48,8 @@ function goback(){
               <label htmlFor={`certification-name-${index}`}>Certification Name:</label>
               <input
                 type="text"
-                id={`name-${index}`}
-                name={`name-${index}`}
+                id={`certificate_name-${index} certificate_name`}
+                name={`name-${index} certificate_name`}
                 placeholder="Enter the certification name"
         
               />
@@ -54,8 +59,8 @@ function goback(){
               <label htmlFor={`organization-${index}`}>Organization:</label>
               <input
                 type="text"
-                id={`organization-${index}`}
-                name={`organization-${index}`}
+                id={`certificate_organization-${index} certificate_organization`}
+                name={`certificate_organization-${index} certificate_organization`}
                 placeholder="Enter the organization name"
         
               />
@@ -68,15 +73,15 @@ function goback(){
                  maxLength={4}
                  placeholder="YYYY"
                  pattern="\d{4}"
-                 id={`date-${index}`}
-                 name={`date-${index}`}
+                 id={`certificate_date-${index} certificate_date`}
+                 name={`certificate_date-${index} certificate_date`}
                 
               />
             </div>
 
-            
+            </div>
             </>))}
-            <div className={`button-group `}>
+            <div className={`button-group-certification `}>
              <button type="button" className={`add-button `} onClick={addcertification}>
              Add Certification
             </button>

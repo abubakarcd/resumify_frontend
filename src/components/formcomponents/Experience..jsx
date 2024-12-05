@@ -9,7 +9,7 @@ import Education from "./Education";
 function Experience(props){
     const [back, setback]=useState(false);
     const [work,setwork]=useState([{title:"",company:"", date:"", responsibility:[]}]);
-    const [education , seteducation]=useState();
+    const [education , seteducation]=useState(false);
 
     // function propss(){
     //   console.log(props.userinfo);
@@ -51,19 +51,22 @@ function Experience(props){
   }
 
   //save and continue to education
-    function toeducation(){
+    function toeducation(e){
+      e.preventDefault();
+      console.log(work);
       seteducation(true);
     }
 
     return(<>
-    {education?(<><Education/></>):<>
+    {education?(<><Education experience={work} home={props.userinfo}/></>):<>
      {back?(<><Info/></>):
         <>
-            {work.map((_,indexM)=>(
+        <form onSubmit={toeducation}>
+            {work.map((workentry,indexM)=>(
                 <div className={` experience-section experience-section-${indexM}`} key={indexM}>
 
                    <div className={` resume-header resume-header-${indexM} exp`}> 
-                      <h2>Experience</h2>
+                      <h2>Experience {indexM +1}</h2>
                       {indexM>0&&(
                       <button className="deletework" onClick={()=>deletework(indexM)}>Delete</button>)}
                       {indexM==0&&(
@@ -77,6 +80,12 @@ function Experience(props){
                         id={`title-${indexM}`}
                         name={`title-${indexM}`}
                         placeholder="Enter your job title"
+                        value={workentry.title || ""} // Ensure value is controlled
+        onChange={(e) => {
+          const updatedWork = [...work];
+          updatedWork[indexM].title = e.target.value; // Update the specific title
+          setwork(updatedWork); // Update the state
+        }}
                        />
                    </div>
 
@@ -84,8 +93,8 @@ function Experience(props){
                          <label htmlFor={`company-${indexM}`}>Company Name:</label>
                          <input
                            type="text"
-                           id={`company-${indexM}`}
-                           name={`company-${indexM}`}
+                           id={`company-${indexM} company`}
+                           name={`company-${indexM} company`}
                            placeholder="Enter company name"
                          />
                     </div>
@@ -94,8 +103,8 @@ function Experience(props){
                          <label htmlFor={`date-${indexM}`}>Date:</label>
                          <input
                            type="text"
-                           id={`date-${indexM}`}
-                           name={`date-${indexM}`}
+                           id={`date-${indexM} date`}
+                           name={`date-${indexM} date`}
                            placeholder="Enter date (e.g., Jan 2020 - Dec 2022)"
                          />
                     </div>
@@ -104,8 +113,8 @@ function Experience(props){
                          <label htmlFor={`responsibility-${index}-${indexM}`}>Responsibility:</label>
                          <input
                            type="text"
-                           id={`responsibility-${index}-${indexM}`}
-                           name={`responsibility-${index}-${indexM}`}
+                           id={`responsibility-${index}-${indexM} responsibility`}
+                           name={`responsibility-${index}-${indexM} responsibility`}
                            placeholder="Enter a responsibility"
                          />
                          
@@ -122,10 +131,12 @@ function Experience(props){
                      </div>
                 </div>
             ))}
+          
                       <button type="button" className="save add-experience-button" onClick={addwork}>
                         Add Work Experience
                       </button>
-                      <button className="save" onClick={toeducation}>Save and Contiue</button>
+                      <button className="save" type="submit">Save and Contiue</button>
+                      </form>
         </>
         }
       </>}
