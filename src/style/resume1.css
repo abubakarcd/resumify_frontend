@@ -1,0 +1,59 @@
+/* src/Resume.css */
+.resume1 {
+    font-family: sans-serif;
+    width: 800px; /* Fixed width */
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  
+  .resume1-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+  
+  .resume1-contact-info {
+    display: flex;
+  }
+  
+  .resume1-contact-item {
+    margin: 0 10px;
+  }
+  
+  .resume1-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .resume1-main-content h2{
+    font-size: larger;
+  }
+  
+  .resume1-left-section, .resume1-right-section {
+    padding: 10px;
+  }
+  
+  /* Specific styles for each section */
+  .resume1-summary, .resume1-experience, .resume1-education, .resume1-projects, .resume1-skills, .resume1-certification, .resume1-passions {
+    margin-bottom: 20px;
+  }
+  
+  .resume1-job, .resume1-edu, .resume1-project, .resume1-cert, .resume1-passion {
+    margin-bottom: 15px;
+  }
+  
+  .resume1-name {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+  
+  .resume1-title {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .resume1-skill-list {
+    margin-bottom: 5px;
+  }

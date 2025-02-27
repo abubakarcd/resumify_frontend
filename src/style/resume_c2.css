@@ -29,7 +29,7 @@ body {
   header>h2{
     color: #0073e6 !important;
   }
-  h2 {
+  .resume-container h2 {
     color: #0073e6;
     font-size: 15px;
     margin-top: 5px;
