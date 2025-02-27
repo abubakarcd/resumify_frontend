@@ -1,77 +1,78 @@
 /* Container */
 .resume-container {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Header */
-  .resume-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .back-button,.deleteeducation {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  /* Section */
-  .resume-section {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    margin-bottom: 20px;
-  }
-  
-  .resume-section h2 {
-    margin: 0 0 15px;
-    font-size: 20px;
-  }
-  
-  /* Input Group */
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .input-group input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Submit Button */
-  .submit-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  /* Experience Section */
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.back-button,
+.deleteeducation {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Section */
+.resume-section {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.resume-section h2 {
+  margin: 0 0 15px;
+  font-size: 20px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+/* Experience Section */
 .experience-section {
   padding: 20px;
   border: 1px solid #ddd;
@@ -92,10 +93,11 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-  
 }
-.main{border-bottom: 5px solid black;
-margin-bottom: 4px;}
+.main {
+  border-bottom: 5px solid black;
+  margin-bottom: 4px;
+}
 
 .input-group label {
   margin-bottom: 5px;
@@ -119,33 +121,36 @@ margin-bottom: 4px;}
   color: white;
   border: none;
   border-radius: 5px;
-  
 }
-.resbtn{
+.resbtn {
   display: flex;
   justify-content: space-evenly;
 }
 
 .add-responsibility-button:hover,
-.add-experience-button:hover,.delete-responsibility-button:hover {
+.add-experience-button:hover,
+.delete-responsibility-button:hover {
   background-color: #020202;
 }
-.delete-responsibility-button{
+.delete-responsibility-button {
   width: fit-content;
   padding: 5px;
   margin-top: 3px;
- color: #ccc;
- background-color: gray;
+  color: #ccc;
+  background-color: gray;
 }
 
-.save{
+.save {
   display: block;
   width: 80%;
   margin: 10px;
   padding: 10px;
   justify-self: center;
 }
-.save:hover,.back-button:hover,.deletework:hover,.deleteeducation:hover{
+.save:hover,
+.back-button:hover,
+.deletework:hover,
+.deleteeducation:hover {
   background-color: black;
   color: white;
 }
@@ -167,7 +172,6 @@ margin-bottom: 4px;}
   margin-bottom: 20px;
   text-align: center;
 }
-
 
 .button-group {
   display: flex;
@@ -212,7 +216,7 @@ margin-bottom: 4px;}
 .add-education-button:active {
   background-color: #1e7e34;
 }
-.deleteeducation{
+.deleteeducation {
   margin-bottom: 10px;
 }
 
@@ -247,7 +251,8 @@ margin-bottom: 4px;}
 }
 
 /* Back Button */
-.back-button,.del{
+.back-button,
+.del {
   padding: 8px 12px;
   font-size: 14px;
   color: #fff;
@@ -261,7 +266,8 @@ margin-bottom: 4px;}
   width: fit-content;
 }
 
-.back-button:hover,.del:hover {
+.back-button:hover,
+.del:hover {
   background-color: #000000;
 }
 
@@ -300,7 +306,8 @@ margin-bottom: 4px;}
   gap: 10px;
 }
 
-.button-group-certification >button,.button-group-projects>button {
+.button-group-certification > button,
+.button-group-projects > button {
   flex: 1;
   padding: 10px;
   font-size: 16px;
@@ -308,7 +315,7 @@ margin-bottom: 4px;}
   font-weight: bold;
   color: #fff;
   border: none;
- margin-bottom: 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -391,8 +398,6 @@ margin-bottom: 4px;}
   position: relative;
 }
 
-
-
 /* Form Inputs */
 .skills-form .input-group {
   margin-bottom: 15px;
@@ -426,4 +431,12 @@ margin-bottom: 4px;}
   display: flex;
   justify-content: space-between;
   gap: 10px;
+}
+/* skip btn */
+.skip{
+  background-color: #fffefe;
+  border-radius: 5%;
+}
+.skip:hover{
+  background-color: #565353 !important;
 }

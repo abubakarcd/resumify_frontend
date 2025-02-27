@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Experience from "./Experience.";
 import Certification from "./certification";
 
 //user will enter its education and this is called when user has entered it experience
-function Education() {
+function Education(props) {
+  //console.log(props.wholeuserinfosend);
+  
   const [addeducation, setaddeducation] = useState([
     { education: "", university: "", graduationdate: "" },
   ]);
   const [back, setback] = useState(false);
   const [save, setsave] = useState(false);
 
+  useEffect(() => {
+    //console.log(props.wholeuserinfosend);
+       if (props.wholeuserinfosend[2]) {//chaekin whether experience exists before or not
+         setaddeducation(props.wholeuserinfosend[2]);
+       }
+     }, [props.wholeuserinfosend]);
+  
   //back button pressed
   function goback() {
+    props.wholeuserinfosend[2]?props.wholeuserinfosend[2]=addeducation:
+    props.wholeuserinfosend.push(addeducation);
+    console.log((props.wholeuserinfosend));
     setback(true);
   }
   //this will add the education
@@ -28,7 +40,8 @@ function Education() {
   }
   //save and continue to certification section
   function tocertification() {
-    console.log(addeducation);
+    props.wholeuserinfosend[2]?props.wholeuserinfosend[2]=addeducation:
+    props.wholeuserinfosend.push(addeducation);
     setsave(true);
   }
 
@@ -36,17 +49,17 @@ function Education() {
     <>
       {save ? (
         <>
-          <Certification />
+          <Certification  wholeuserinfosend={props.wholeuserinfosend}/>
         </>
       ) : (
         <>
           {back ? (
             <>
-              <Experience />
+              <Experience  wholeuserinfosend={props.wholeuserinfosend}/>
             </>
           ) : (
             <>
-              {addeducation.map((_, index) => (
+              {addeducation.map((addeducations, index) => (
                 <div
                   className={`education-section education-section-${index}`}
                   key={index}
@@ -59,7 +72,6 @@ function Education() {
                       >
                         Back
                       </button>
-                     
                     </>
                   )}
                   {index > 0 && (
@@ -71,7 +83,8 @@ function Education() {
                         Delete
                       </button>
                     </>
-                  )} <h2>Education Details {index+1}</h2>
+                  )}{" "}
+                  <h2>Education Details {index + 1}</h2>
                   <div className={`input-group-${index} input-group`}>
                     <label htmlFor={`education-${index} education`}>
                       Education:
@@ -81,6 +94,12 @@ function Education() {
                       id={`education-${index} education`}
                       name={`education-${index} education`}
                       placeholder="Enter your education"
+                      value={addeducations.education || ""} // Ensure value is controlled
+                        onChange={(e) => {
+                          const updatededucation = [...addeducation];
+                          updatededucation[index].education = e.target.value; // Update the specific title
+                          setaddeducation(updatededucation); // Update the state
+                        }}
                     />
                   </div>
                   <div className={`input-group-${index} input-group`}>
@@ -92,6 +111,12 @@ function Education() {
                       id={`university-${index} university`}
                       name={`university-${index} university`}
                       placeholder="Enter your university name"
+                      value={addeducations.university || ""} // Ensure value is controlled
+                        onChange={(e) => {
+                          const updatededucation = [...addeducation];
+                          updatededucation[index].university = e.target.value; // Update the specific title
+                          setaddeducation(updatededucation); // Update the state
+                        }}
                     />
                   </div>
                   <div className={`input-group-${index} input-group`}>
@@ -107,6 +132,12 @@ function Education() {
                       pattern="\d{4}"
                       id={`graduation-date-${index} graduation-date`}
                       name={`graduation-date-${index} graduation-date`}
+                      value={addeducations.graduationdate || ""} // Ensure value is controlled
+                        onChange={(e) => {
+                          const updatededucation = [...addeducation];
+                          updatededucation[index].graduationdate = e.target.value; // Update the specific title
+                          setaddeducation(updatededucation); // Update the state
+                        }}
                     />
                   </div>
                 </div>

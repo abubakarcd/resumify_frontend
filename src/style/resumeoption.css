@@ -1,0 +1,72 @@
+.resume-container-options {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #aca9a9;
+}
+
+.resume-container h2 {
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.resume-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.resume-preview {
+    width: 180px;
+    height: 250px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.resume-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
+.resume-preview img:hover {
+    opacity: 0.6;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.back-btn, .save-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.back-btn {
+    background-color: #ccc;
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.back-btn:hover, .save-btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .resume-options {
+        flex-direction: column;
+        align-items: center;
+    }
+}

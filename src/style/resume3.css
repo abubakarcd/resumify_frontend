@@ -1,0 +1,103 @@
+.resume {
+    font-family: sans-serif;
+    line-height: 1.4;
+    font-size: 14px;
+    max-width: 900px; /* Limit the width of the resume container */
+    margin: 20px auto; /* Center the container horizontally */
+    border: 1px solid black;
+  }
+  
+  /* Rest of your CSS remains the same */
+  
+  .header {
+    padding-bottom: 15px;
+    padding-left: 10px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.8em;
+  }
+  
+  .header p {
+    margin: 3px 0;
+    font-size: 1em;
+  }
+  
+  .contact-info {
+    display: flex;
+    gap: 15px;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: rgb(52, 51, 51);
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 15px;
+  }
+  .right-column{
+    background-color: rgb(76, 159, 243);
+    padding: 18px;
+    padding-top: 38%;
+  }
+  .left-column {
+    padding: 18px;
+    padding-right: 12px;
+  }
+  
+  section {
+    margin-bottom: 15px;
+  }
+  
+  section h2 {
+    font-size: 1.2em;
+  }
+  
+  .job, .degree, .strength {
+    margin-bottom: 12px;
+  }
+  
+  .right {
+    float: right;
+    font-size: 0.9em;
+  }
+  
+  .location {
+    margin: 0;
+    font-size: 0.9em;
+  }
+  
+  ul {
+    padding-left: 18px;
+    font-size: 0.95em;
+  }
+  .skills>ul{
+    padding-left: 5px !important;
+    font-size: 0.95em;
+    gap: 2px 25px !important;
+    list-style-type: disc;
+  }
+  
+  .achievement-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .achievement {
+    width: 48%;
+  }
+  
+  .achievement h3 {
+    font-size: 1em;
+  }
+  
+  h2{
+   font-weight: bold !important;
+   font-size: large;
+  }
+  h3{
+    font-weight: 600;
+    font-size: medium;
+  }
