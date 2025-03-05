@@ -84,7 +84,7 @@ function Education(props) {
                       </button>
                     </>
                   )}{" "}
-                  <h2>Education Details {index + 1}</h2>
+                  <h2>Education {index + 1}</h2>
                   <div className={`input-group-${index} input-group`}>
                     <label htmlFor={`education-${index} education`}>
                       Education:

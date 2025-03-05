@@ -4,7 +4,7 @@ import "../../style/resume1.css";
 function Resume_c1(props){
   //console.log(props.font_family, props.wholeuserinfosend);
   const userinfo=props.wholeuserinfosend;
-  const [personalinfo,experience,education,b,c,d]=userinfo;
+  const [personalinfo,experience,education,certification_info,c,d]=userinfo;
     return(
         <div className="resume1">
         <div className="resume1-header">
@@ -97,16 +97,16 @@ function Resume_c1(props){
             </div>
   
             <div className="resume1-certification">
-              <h2>CERTIFICATION</h2>
-              <div className="resume1-cert">
-                <h3>Java and Java EE Programming</h3>
-                <p>An intensive course offered by Oracle University focusing on Java and Java EE.</p>
-              </div>
-              <div className="resume1-cert">
-                <h3>XML and XML Parsers</h3>
-                <p>A specialized course by the University of California, Berkeley Extension focusing on extensive XML and XML parsers.</p>
-              </div>
-            </div>
+            {certification_info.length!==0?
+              <h2>CERTIFICATION</h2>:""}
+            {certification_info.length!==0?certification_info.map((certificates,index)=>(
+                  <div className="resume1-cert" key={index}>
+                  <h3>{certificates.certificate_name} </h3>
+                  <p className="resume1-organization">{certificates.certificate_organization} - {certificates.certificate_date}</p>
+                 
+                   </div>
+             )):""}
+            </div> 
           </div>
         </div>
       </div>
