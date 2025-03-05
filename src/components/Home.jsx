@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import page1 from "../assets/page1.png";
-import page2 from "../assets/page2.png";
-import page3 from "../assets/page3.png";
-import page4 from "../assets/page4.png";
 import logo from "../assets/logo.png";
 import resume1 from "../assets/resume g2.png";
 import resume2 from "../assets/resume g3.png";
@@ -33,14 +30,12 @@ function createResume(){
     <section id='home'>
          <div className='home'>
         <div className='upperdiv'>
-            <div className='upperheading'><h1>Build Your Perfect Resume – Fast, Professional, and Tailored Just for You</h1></div>
-            <div className='buttoncreate' onClick={createResume}> <button>Create resume</button></div>
+            <div className='upperheading homehead'><h1>Build Your Perfect Resume – Fast, Professional, and Tailored Just for You</h1>
+            <p>Resumify is a streamlined, user-friendly platform designed to help individuals create professional and impactful resumes with ease. It combines intuitive design with powerful customization options, allowing users to build, save, and modify their resumes seamlessly.  </p></div>
+            <div className='buttoncreate'> <button onClick={createResume}>Create resume</button></div>
           </div>
-         <div className='imagediv'>
-             <div className='img'><img src={page1} alt='imgresume'/></div>
-             <div className='img'><img src={page2} alt='imgresume'/></div>
-             <div className='img'><img src={page3} alt='imgresume'/></div>
-             <div className='img'><img src={page4} alt='imgresume'/></div>
+         <div className='imagedivhome'>
+             <img src={page1} alt='imgresume'/>
          </div>
      </div>
      </section>

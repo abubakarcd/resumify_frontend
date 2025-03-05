@@ -64,6 +64,7 @@ function Experience(props) {
     console.log(props.wholeuserinfosend);
     seteducation(true);
   }
+  //skip experience
   function skip(){
     props.wholeuserinfosend[1]?props.wholeuserinfosend[1]=[]:
     props.wholeuserinfosend.push([]);

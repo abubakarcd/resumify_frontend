@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/resume1.css";
 
-function Resume_c1(){
+function Resume_c1(props){
+  //console.log(props.font_family, props.wholeuserinfosend);
+  const userinfo=props.wholeuserinfosend;
+  const [personalinfo,experience,education,b,c,d]=userinfo;
     return(
         <div className="resume1">
         <div className="resume1-header">
-          <h1 className="resume1-name">Riley Nelson</h1>
-          <p className="resume1-title">Java/Web Application Developer | Oracle Backend Specialist</p>
+          <h1 className="resume1-name">{personalinfo.name.toUpperCase()}</h1>
+          <p className="resume1-title">{personalinfo.profession.charAt(0).toUpperCase()+ personalinfo.profession.slice(1)}</p>
           <div className="resume1-contact-info">
-            <p className="resume1-contact-item">@help@enhancv.com</p>
-            <p className="resume1-contact-item">linkedin.com</p>
-            <p className="resume1-contact-item">Los Angeles, California</p>
+            <p className="resume1-contact-item">{personalinfo.email}</p>
+            <p className="resume1-contact-item">{personalinfo.phone}</p>
+            <p className="resume1-contact-item">{personalinfo.linkedin}</p>
           </div>
         </div>
   
@@ -18,44 +21,37 @@ function Resume_c1(){
           <div className="resume1-left-section">
             <div className="resume1-summary">
               <h2>SUMMARY</h2>
-              <p>Expert full-stack Java developer with over 5 years' experience in Java EE development with Oracle backend. Skilled in a plethora of technologies like JSF, Angular, Hibernate, and Tomcat with a proven track record of project delivery. Excited to bring thorough problem resolution, effective team collaboration, and high attention to detail to deliver efficiently.</p>
+              <p>{personalinfo.summary.charAt(0).toUpperCase()+personalinfo.summary.slice(1)}</p>
             </div>
   
-            <div className="resume1-experience">
-              <h2>EXPERIENCE</h2>
-              <div className="resume1-job">
-                <h3>Mid-Level Java/Web Application Developer</h3>
-                <p className="resume1-company">Techify Inc.</p>
-                <p className="resume1-dates-location">2020 - Present | Los Angeles, CA</p>
-                <p>Frontend and backend development of enterprise-grade web applications.</p>
-                <p>Collaborated with a team of developers to design and deploy highly efficient Java EE applications, improving application response time by 25%.</p>
-              </div>
-              <div className="resume1-job">
-                <h3>Java Developer</h3>
-                <p className="resume1-company">Innotech Solutions</p>
-                <p className="resume1-dates-location">2017 - 2020 | Los Angeles, CA</p>
-                <p>Frontend and backend development of enterprise-grade web applications.</p>
-                <p>Collaborated with a team of developers to design and deploy highly efficient Java EE applications, improving application response time by 25%.</p>
-              </div>
-            </div>
-  
-            <div className="resume1-education">
-              <h2>EDUCATION</h2>
-              <div className="resume1-edu">
-                <h3>Bachelor of Science in Computer Science</h3>
-                <p className="resume1-university">California State University, Los Angeles</p>
-                <p className="resume1-dates-location">2011 - 2015 | Los Angeles, CA</p>
-              </div>
-              <div className="resume1-edu">
-                <h3>Master of Computer Science</h3>
-                <p className="resume1-university">University of California, Los Angeles</p>
-                <p className="resume1-dates-location">2016 - 2017 | Los Angeles, CA</p>
-              </div>
-            </div>
-          </div>
-  
-          <div className="resume1-right-section">
-            <div className="resume1-projects">
+             <div className="resume1-experience" >
+              {experience.length!==0?
+              <h2>EXPERIENCE</h2>:""}
+             
+              {/* to check if user has skipped experience or not -----------------------------------> */}
+              {experience.length!==0?experience.map((experience_loop,index) => (
+               
+              <div className={`resume1-job exp-${index}` }>
+              <h3>{experience_loop.title}</h3>
+                <p className="resume1-company">{experience_loop.company}</p>
+                <p className="resume1-dates-location">{experience_loop.date} </p>
+                 {/* chechking if responsibility exi+st or not */}
+                 {experience_loop.responsibility.length!=0?experience_loop.responsibility.map((responsibilities,index)=>(
+
+                <ul className="resume1_expereience_list">
+                  <li>
+                  {responsibilities.charAt(0).toUpperCase()+responsibilities.slice(1)}
+                  </li>
+                 
+                </ul>) )
+                :""}
+              </div>  
+             ))
+              :""}
+               </div>
+
+
+               <div className="resume1-projects">
               <h2>PROJECTS</h2>
               <div className="resume1-project">
                 <h3>E-commerce Platform (Java EE)</h3>
@@ -70,15 +66,34 @@ function Resume_c1(){
                 <p>Designed and built a robust backend for a mobile application using Spring Boot, focusing on user authentication and data synchronization.</p>
               </div>
             </div>
+          </div>
+      
+          <div className="resume1-right-section">
+            <div className="resume1-education" >
+           {education.length!=0?
+              <h2>EDUCATION</h2>:""}
+
+           {education.length!=0?
+              education.map((educations,index)=>(
+              <div className="resume1-edu" key={index}>
+                <h3>{educations.education}</h3>
+                <p className="resume1-university">{educations.university}</p>
+                <p className="resume1-dates-location">{educations.graduationdate}</p>
+              </div>
+            
+            )):""}
+          </div>
   
             <div className="resume1-skills">
               <h2>SKILLS</h2>
-              <p className="resume1-skill-list">Java EE | Oracle | JSF | JSP | Struts</p>
-              <p className="resume1-skill-list">Hibernate | Spring | JavaScript | jQuery</p>
-              <p className="resume1-skill-list">Angular6+ | AngularJS | TypeScript</p>
-              <p className="resume1-skill-list">Restful Webservices | Tomcat | JBoss</p>
-              <p className="resume1-skill-list">Git | Maven | SQL | XML</p>
-              <p className="resume1-skill-list">Agile methodologies</p>
+              <ul>
+                <li>Java EE</li>
+                <li>Hibernate</li>
+                <li>Angular6+</li>
+                <li>Restful Webservices</li>
+                <li>Git</li>
+                <li>Agile methodologies</li>
+              </ul>
             </div>
   
             <div className="resume1-certification">

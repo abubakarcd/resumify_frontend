@@ -7,7 +7,7 @@ import Resumeoptions from './components/formcomponents/resumeoptions.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
-    <Resumeoptions/>
+    <App />
+    {/* <Resumeoptions/> */}
   </StrictMode>,
 )

@@ -1,7 +1,11 @@
 /* src/Resume.css */
 .resume1 {
-    font-family: sans-serif;
-    width: 800px; /* Fixed width */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-family: 'Times New Roman', Times, serif; */
+   
+    width: 1000px; /* Fixed width */
     margin: 20px auto;
     border: 1px solid #ccc;
     padding: 20px;
@@ -10,7 +14,6 @@
   }
   
   .resume1-header {
-    border-bottom: 1px solid #eee;
     padding-bottom: 20px;
   }
   
@@ -19,7 +22,8 @@
   }
   
   .resume1-contact-item {
-    margin: 0 10px;
+    margin:0 10% 0 0;
+    
   }
   
   .resume1-main-content {
@@ -29,6 +33,12 @@
   }
   .resume1-main-content h2{
     font-size: larger;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+  }
+  .resume1-main-content h3{
+    font-size: medium;
+    font-weight: bold;
   }
   
   .resume1-left-section, .resume1-right-section {
@@ -43,6 +53,10 @@
   .resume1-job, .resume1-edu, .resume1-project, .resume1-cert, .resume1-passion {
     margin-bottom: 15px;
   }
+  .resume1_expereience_list{
+    margin: 0;
+   padding-left: 10px;
+  }
   
   .resume1-name {
     font-size: 28px;
@@ -54,6 +68,11 @@
     color: #555;
   }
   
-  .resume1-skill-list {
+  .resume1-skill-list>li {
     margin-bottom: 5px;
+  }
+  .resume1-skills>ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 25px !important;
   }

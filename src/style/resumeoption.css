@@ -1,13 +1,16 @@
 .resume-container-options {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 20px;
+    padding: 10%;
     background-color: #aca9a9;
+   height: max-content;
 }
 
-.resume-container h2 {
+.resume-container-options h2 {
+    font-size: xx-large;
     margin-bottom: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(1, 1, 1);
+    font-weight: bold;
 }
 
 .resume-options {
@@ -18,8 +21,8 @@
 }
 
 .resume-preview {
-    width: 180px;
-    height: 250px;
+    width: 40%; 
+    height: 35%;
     border: 2px solid #000000;
     border-radius: 8px;
     overflow: hidden;
@@ -65,8 +68,19 @@
 
 /* Responsive */
 @media (max-width: 600px) {
+    .resume-preview {
+        width: 60%; 
+        height: 60%;}
+    .resume-container-options{
+        height:max-content;    }
     .resume-options {
         flex-direction: column;
-        align-items: center;
+        align-items:center;
     }
+    .resume-container-options{
+        padding: 2%;
+    }
+        .resume-container-options h2{
+            font-size: medium;
+        }
 }

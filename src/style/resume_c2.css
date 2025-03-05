@@ -1,106 +1,103 @@
+/* General body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .resume-container {
-    background: white;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  header {
+  font-family: Arial, sans-serif; /* Default font */
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
 
-    padding-bottom: 10px;
-  }
-  
-  h1 {
-    color: #000000;
-    font-size: xx-large;
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  header>h2{
-    color: #0073e6 !important;
-  }
-  .resume-container h2 {
-    color: #0073e6;
-    font-size: 15px;
-    margin-top: 5px;
-  }
-  
-  p {
-    color: #000000;
-    font-size: 14px;
-  }
-  
-  h3 {
-    border-bottom: 2px solid #000000;
-    padding-bottom: 5px;
-    font-weight: bold;
-    color: #000000;
-  }
-  
-  .job, .achievement {
-    margin-top: 15px;
-  }
-  
-  .job-details {
-    font-style: italic;
-    color: #777;
-  }
-  
-  ul {
-    padding-left: 20px;
-  
-    color: #000000;
-  }
-  
-  ul li {
-    margin: 5px 0;
-  }
-  
+/* Main resume container */
+.resume_c2_resume-container { /* Changed to .resume_c2_resume-container */
+  background: white;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  
-.edu-item h5{
+/* Header styles */
+.resume_c2_resume-container header { /* Changed to .resume_c2_resume-container header */
+  padding-bottom: 10px;
+}
+
+.resume_c2_resume-container h1 { /* Changed to .resume_c2_resume-container h1 */
+  color: #000000;
+  font-size: xx-large;
+  margin: 0;
+  font-weight: bold;
+}
+
+.resume_c2_resume-container header > h2 { /* Changed to .resume_c2_resume-container header > h2 */
+  color: #0073e6 !important;
+}
+
+.resume_c2_resume-container h2 { /* Changed to .resume_c2_resume-container h2 */
+  color: #0073e6;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.resume_c2_resume-container p { /* Changed to .resume_c2_resume-container p */
+  color: #000000;
+  font-size: 14px;
+}
+
+.resume_c2_resume-container h3 { /* Changed to .resume_c2_resume-container h3 */
+  border-bottom: 2px solid #000000;
+  padding-bottom: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.resume_c2_resume-container .job, .resume_c2_resume-container .achievement { /* Changed to .resume_c2_resume-container .job, .resume_c2_resume-container .achievement */
+  margin-top: 15px;
+}
+
+.resume_c2_resume-container .job-details { /* Changed to .resume_c2_resume-container .job-details */
+  font-style: italic;
+  color: #777;
+}
+
+.resume_c2_resume-container ul { /* Changed to .resume_c2_resume-container ul */
+  padding-left: 20px;
+  color: #000000;
+}
+
+.resume_c2_resume-container ul li { /* Changed to .resume_c2_resume-container ul li */
+  margin: 5px 0;
+}
+
+.resume_c2_resume-container .edu-item h5 { /* Changed to .resume_c2_resume-container .edu-item h5 */
   color: black !important;
-  
 }
-.edu-item p{
+
+.resume_c2_resume-container .edu-item p { /* Changed to .resume_c2_resume-container .edu-item p */
   color: #777;
 }
 
-  .project {
-    color: rgb(0, 0, 0);
-  }
-  
-  .project h5 {
-    color: #000000;
-  }
-  
- .project>p{
-  color: #777;
- }
-  
+.resume_c2_resume-container .project { /* Changed to .resume_c2_resume-container .project */
+  color: rgb(0, 0, 0);
+}
 
-  .skills ul {
-    list-style-type:circle;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 40px;
-    margin-top: 0px;
-  }
-  
-  .skills li {
-    color: rgb(0, 0, 0);
-    
-    font-size: 14px;
-  }
-  
+.resume_c2_resume-container .project h5 { /* Changed to .resume_c2_resume-container .project h5 */
+  color: #000000;
+}
+
+.resume_c2_resume-container .project > p { /* Changed to .resume_c2_resume-container .project > p */
+  color: #777;
+}
+
+.resume_c2_resume-container .skills ul { /* Changed to .resume_c2_resume-container .skills ul */
+  list-style-type: circle;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  margin-top: 0px;
+}
+
+.resume_c2_resume-container .skills li { /* Changed to .resume_c2_resume-container .skills li */
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+}
