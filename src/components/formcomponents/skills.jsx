@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Projects from "./projects";
 import Resumeoptions from "./resumeoptions";
-import { useForm } from 'react-hook-form';
 
 
 function Skills(props) {
   const [save, setsave] = useState(false);
   const [back, setback] = useState(false);
   const [skill, setskill] = useState([{ skill_name: "" }]);
-  
   
    useEffect(() => {
           //console.log(props.wholeuserinfosend);
@@ -84,10 +82,9 @@ function Skills(props) {
                             id={`skill_name-${index} skill_name`}
                             name={`skill_name-${index} skill_name`}
                             placeholder="Enter a skill (e.g., JavaScript)"
-                            required
-                            value={skills.skill_name}
+                             value={skills.skill_name}
                             onChange={(e)=>{
-                             
+                              
                               const updatedskills = [...skill];
                               updatedskills[index].skill_name = e.target.value; 
                               setskill(updatedskills);
