@@ -9,6 +9,8 @@ import Resume_c2 from "./resume_c2";
 import Resume_c3 from "./resume_c3";
 //use will select the style of the resume
 function Resumeoptions(props){
+  console.log(props.wholeuserinfosend);
+  
    const [resume_c1,setresume1]=useState(false);
    const [resume_c2,setresume2]=useState(false);
    const [resume_c3,setresume3]=useState(false);
@@ -35,14 +37,11 @@ function Resumeoptions(props){
                 break;
         }
 
-    } console.log(font);
+    }
     //selcting font family and sending it to resume selected
     function fontfamily(event){
       const fontfam=event.target.value;
       setfont(fontfam);
-      console.log(font);
-      
-      
     }
     return (<>
     {back?<Skills wholeuserinfosend={props.wholeuserinfosend}/>:resume_c1 ? (<Resume_c1 font_family={font} wholeuserinfosend={props.wholeuserinfosend}/>):(resume_c2?<Resume_c2 font_family={font} wholeuserinfosend={props.wholeuserinfosend}/>:resume_c3?<Resume_c3 font_family={font} wholeuserinfosend={props.wholeuserinfosend}/>:

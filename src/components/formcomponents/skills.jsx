@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Projects from "./projects";
 import Resumeoptions from "./resumeoptions";
+import { useForm } from 'react-hook-form';
+
 
 function Skills(props) {
   const [save, setsave] = useState(false);
   const [back, setback] = useState(false);
   const [skill, setskill] = useState([{ skill_name: "" }]);
+  
+  
    useEffect(() => {
           //console.log(props.wholeuserinfosend);
              if (props.wholeuserinfosend[5]) {//checkin whether skill exists before or not
@@ -13,7 +17,12 @@ function Skills(props) {
              }
            }, [props.wholeuserinfosend]);
   //save and continue tocreate resume
-  function createresume() {
+  function createresume(e) {
+    e.preventDefault();
+    // if (skill.some((skills) => !skills.skill_name.trim())) {
+    //   alert("Please fill in all skill fields.");
+    //   return;
+    // }
     props.wholeuserinfosend[5]?props.wholeuserinfosend[5]=skill:props.wholeuserinfosend.push(skill);
     console.log(props.wholeuserinfosend);
     setsave(true);
@@ -48,7 +57,7 @@ function Skills(props) {
           ) : (
             <>
               <div className="skills-form-container">
-                <form className="skills-form">
+                <form className="skills-form" >
                   <h2>Skills </h2>
                   {skill.map((skills, index) => (
                     
@@ -75,12 +84,15 @@ function Skills(props) {
                             id={`skill_name-${index} skill_name`}
                             name={`skill_name-${index} skill_name`}
                             placeholder="Enter a skill (e.g., JavaScript)"
+                            required
                             value={skills.skill_name}
                             onChange={(e)=>{
+                             
                               const updatedskills = [...skill];
                               updatedskills[index].skill_name = e.target.value; 
                               setskill(updatedskills);
                             }}
+                           
                           />
                         </div>
                       </div>

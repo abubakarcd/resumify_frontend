@@ -71,8 +71,20 @@
   .resume1-skill-list>li {
     margin-bottom: 5px;
   }
-  .resume1-skills>ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px 25px !important;
+  .resume1-skills-list{
+   display: flex !important;
+   flex-wrap: wrap;
   }
+  .downloadbtn{
+    color: white;
+    background-color: rgb(0, 128, 255);
+    padding: 10px;
+    border-radius: 10px;
+    border:4px solid black;
+    margin-left: 5px;
+  }
+.downloadbtn:hover{
+  background-color: rgb(103, 176, 248) ;
+  color: black;
+  
+}

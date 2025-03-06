@@ -57,6 +57,7 @@ function Experience(props) {
 
   //save and continue to education
   function toeducation(e) {
+
     e.preventDefault();
     console.log(e.target.name);
     props.wholeuserinfosend[1]?props.wholeuserinfosend[1]=work:

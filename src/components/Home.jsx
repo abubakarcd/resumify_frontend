@@ -14,6 +14,7 @@ import youtube from "../assets/youtube.webp";
 import Form from "./Form";
 import Premium from './premium';
 import Contact from './contact';
+import MyNavbar from "./Navbar";
 
 function Home(){
     const [toform,getform]=useState(false);
@@ -27,6 +28,7 @@ function createResume(){
     return(<>
         { toform ?(<Form/>):(
             <>
+            <MyNavbar/>
     <section id='home'>
          <div className='home'>
         <div className='upperdiv'>

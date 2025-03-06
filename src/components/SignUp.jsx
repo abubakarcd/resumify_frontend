@@ -14,7 +14,7 @@ function Signup(){
 
 
     return (<>
-        {userregistered ? (<><MyNavbar/><LandingPage/></>) :(
+        {userregistered ? (<><LandingPage/></>) :(
     <div id="signup">
        <div id="signin">
         <div id="logo"><img src={logo} alt="logo"/><p>Resumify</p></div>
