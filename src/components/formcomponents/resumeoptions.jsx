@@ -56,6 +56,8 @@ function Resumeoptions(props){
     <option value="Times New Roman">Times New Roman</option>
     <option value="Georgia">Georgia</option>
     <option value="Verdana">Verdana</option>
+    <option value="Calibri">Calibri</option>
+    <option value="Helvetica">Helvetica</option>
     {/* Add more font options as needed */}
   </select>
 </div>

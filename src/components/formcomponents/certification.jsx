@@ -20,7 +20,8 @@ function Certification(props) {
          }
        }, [props.wholeuserinfosend]);
   //save and continue to projects
-  function toprojects() {
+  function toprojects(e) {
+    e.preventDefault();
     props.wholeuserinfosend[3]?props.wholeuserinfosend[3]=certificate:
     props.wholeuserinfosend.push(certificate);
     setsave(true);

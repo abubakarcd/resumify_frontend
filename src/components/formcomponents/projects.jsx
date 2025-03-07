@@ -15,7 +15,8 @@ function Projects(props) {
            }
          }, [props.wholeuserinfosend]);
   //save and continue
-  function toskill() {
+  function toskill(e) {
+    e.preventDefault();
     props.wholeuserinfosend[4]?props.wholeuserinfosend[4]=projects:
     props.wholeuserinfosend.push(projects);
     setsave(true);

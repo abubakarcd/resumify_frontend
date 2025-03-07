@@ -1,112 +1,142 @@
-import React from "react";
+import React ,{useState} from "react";
 import "../../style/resume_c2.css"
+import Resumeoptions from "./resumeoptions";
+import { usePDF } from 'react-to-pdf';
+import html2canvas from "html2canvas";
 
-function Resume_c2(){
-    return(
-        <div className="resume_c2_resume-container"> {/* Added the specific class name */}
+function Resume_c2(props){
+    const userinfo=props.wholeuserinfosend;
+    const font=props.font_family;
+    const [personalinfo,experience,education,certification_info,project,skill]=userinfo;
+     const [backbtn,setback]=useState(false);//to go back
+ const { toPDF, targetRef } = usePDF({filename: 'resume.pdf'});
+
+     //go back to resumeselection
+  function goback(){
+    setback(true);
+  }
+
+  const handleDownloadImage = async() => {
+    const element = document.getElementById('print'),
+    canvas = await html2canvas(element),
+    data = canvas.toDataURL('image/jpg'),
+    link = document.createElement('a');
+
+    link.href = data;
+    link.download = 'downloaded-image.jpg';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+    return(<>
+        {backbtn ? <Resumeoptions wholeuserinfosend={userinfo}/> :(
+            <>
+            <div className="buttons">
+            <button className="back-btn" onClick={goback}>Back</button>
+            <button className="downloadbtn" onClick={() => toPDF()}>Download PDF</button>
+            <button className="downloadbtn" type="button" onClick={handleDownloadImage}>Download JPG</button>
+            
+          </div>
+        <div className="resume_c2_resume-container " id="print" style={{fontFamily:`${font}`}}  ref={targetRef}> {/* Added the specific class name */}
             <header>
-                <h1>Johnatan Wright</h1>
-                <h2>Product Manager Inspired by Innovation</h2>
-                <p>📞 +1-785-112-8512 | 📧 alexmurphy@gmail.com | 🌍 www.linkedin.com/alex-murphy</p>
-                <p>📍 San Francisco, CA</p>
+                <h1>{personalinfo.name.toUpperCase()}</h1>
+                <h2>{personalinfo.profession.charAt(0).toUpperCase()+ personalinfo.profession.slice(1)}</h2>
+                <div className="resume1-contact-info">
+            <p className="resume1-contact-item">{personalinfo.email}</p>
+            <p className="resume1-contact-item">{personalinfo.phone}</p>
+            <p className="resume1-contact-item">{personalinfo.linkedin}</p>
+          </div>
             </header>
 
             <section className="summary">
                 <h3>Summary</h3>
                 <p>
-                    Result-oriented product manager with 8 years of experience in developing unique software products.
-                    Excelled in Scrum, product design, and data analysis to reach optimal product quality. Seeking to join
-                    Google and bring innovative products to a broader audience.
+                {personalinfo.summary.charAt(0).toUpperCase()+personalinfo.summary.slice(1)}
                 </p>
             </section>
 
             <section className="experience">
-                <h3>Professional Experience</h3>
+            {experience.length!==0?
+             <h3>Professional Experience</h3> :""}
+                
+              {/* to check if user has skipped experience or not -----------------------------------> */}
+              {experience.length!==0?experience.map((experience_loop,index) => (
+                <div className="job" key={`exp2-${index}`}>
+                    <h5>{experience_loop.title.charAt(0).toUpperCase()+experience_loop.title.slice(1)}</h5>
+                    <p className="job-details">{experience_loop.company.charAt(0).toUpperCase()+experience_loop.company.slice(1)} - {experience_loop.date}</p>
+                     {/* chechking if responsibility exi+st or not */}
+                 {experience_loop.responsibility.length!=0?experience_loop.responsibility.map((responsibilities,index)=>(
 
-                <div className="job">
-                    <h5>Product Manager - Intel</h5>
-                    <p className="job-details">2020 - 2022 | San Francisco, CA</p>
-                    <ul>
-                        <li>Managed over 2 large delivery projects with a team of 50+.</li>
-                        <li>Implemented a faster process for feature ideation, validation, and development.</li>
-                        <li>Worked on Intel Xeon Scalable Processors.</li>
-                        <li>Executed strategy based on financial projections and customer feedback.</li>
+                    <ul key={`responsibilti-${index}`}>
+                         <li>
+                  {responsibilities.charAt(0).toUpperCase()+responsibilities.slice(1)}
+                  </li>
                     </ul>
+                    ) )
+                    :""}
                 </div>
 
-                <div className="job">
-                    <h5>Senior Software Engineer - Samsung</h5>
-                    <p className="job-details">2019 - 2020 | Los Angeles, CA</p>
-                    <ul>
-                        <li>Led a team of 10 offshore and onsite developers.</li>
-                        <li>Reduced production time by 25% with an automated tool.</li>
-                        <li>Developed 5 backend PL/SQL procedures and functions for BI reporting.</li>
-                    </ul>
-                </div>
+                ))
+              :""}
+            </section>
 
-                <div className="job">
-                    <h4>Software Engineer - Microsoft</h4>
-                    <p className="job-details">2014 - 2020 | San Diego, CA</p>
-                    <ul>
-                        <li>Optimized network stack, reducing latency by 33%.</li>
-                        <li>Improved migration tool performance by 53%.</li>
-                        <li>Refactored analytics tool, cutting computation time by 37%.</li>
-                    </ul>
+            
+            {/* Projects Section (Displayed in Horizontal Line) */}
+            <section className="projects">
+            {project.length!==0?
+              <h3>PROJECTS</h3>:""}
+                <div className="projects-container">
+                {project.length!==0?project.map((projects,index)=>(
+                    <div className="project" key={`project-${index}`}>
+                        <h5>{projects.project_name.charAt(0).toUpperCase()+projects.project_name.slice(1)} - {projects.project_date}</h5>
+                        <p>{projects.project_description.charAt(0).toUpperCase()+projects.project_description.slice(1)}</p>
+
+                    </div>
+                    )):""}
+
                 </div>
             </section>
 
             <section className="education">
-                <h3>Education</h3>
-                <div className="edu-item">
-                    <h5 className="edu-degree">Bachelor's in Computer Science</h5>
-                    <p className="edu-details">Stanford University | 2010 - 2014</p>
-                </div>
-                <div className="edu-item">
-                    <h5>Bachelor's in Computer Science</h5>
-                    <p className="edu-details">Stanford University | 2010 - 2014</p>
-                </div>
-            </section>
+            {education.length!=0?
+              <h3>EDUCATION</h3>:""}
 
-            {/* Projects Section (Displayed in Horizontal Line) */}
-            <section className="projects">
-                <h3>Projects</h3>
-                <div className="projects-container">
-                    <div className="project">
-                        <h5>AI Chatbot - Jan 2023</h5>
-                        <p>Developed an AI-powered chatbot for customer service automation. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat molestias possimus autem qui eaque praesentium reprehenderit unde aperiam? Magni voluptatibus alias omnis qui fugiat quas saepe cupiditate facere quasi. Sit.</p>
+              { education.length!=0?
+              education.map((educations,index)=>(
+                <div className="edu-item" key={`education-${index}`}>
+                <h5 className="edu-degree">{educations.education.charAt(0).toUpperCase()+educations.education.slice(1)}</h5>
+                <p className="edu-details">{educations.university.charAt(0).toUpperCase()+educations.university.slice(1)} - {educations.graduationdate}</p>
+                
+              </div>
+            )):""}
+           </section>
 
-                    </div>
-
-                    <div className="project">
-                        <h5>Blockchain Wallet_2023</h5>
-                        <p>Built a secure Ethereum-based cryptocurrency wallet.Developed an AI-powered chatbot for customer service automation. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat molestias possimus autem qui eaque praesentium reprehenderit unde aperiam? Magni voluptatibus alias omnis qui fugiat quas saepe cupiditate facere quasi. Sit.</p>
-
-                    </div>
-
-                    <div className="project">
-                        <h5>E-commerce Website</h5>
-                        <p>Designed a responsive online store for a fashion brand.</p>
-                    </div>
-                </div>
-            </section>
+           <section className="certification">
+            
+           {certification_info.length!==0?
+              <h3>CERTIFICATION</h3>:""}
+            {certification_info.length!==0?certification_info.map((certificates,index)=>(
+                  <div className="resume2-cert" key={`certificate-${index}`}>
+                  <h5>{certificates.certificate_name.charAt(0).toUpperCase()+certificates.certificate_name.slice(1)} </h5>
+                  <p className="resume2-organization">{certificates.certificate_organization.charAt(0).toUpperCase()+certificates.certificate_organization.slice(1)} - {certificates.certificate_date}</p>
+                 
+                   </div>
+             )):""}
+           </section>
 
             <section className="skills">
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Scrum</li>
-                    <li>Product Development</li>
-                    <li>Python</li>
-                    <li>Data Analysis</li>
-                    <li>React</li>
-                    <li>Blockchain</li>
-                    <li>Product Development</li>
-                    <li>Python</li>
-                    <li>Data Analysis</li>
-                    <li>React</li>
-                    <li>Blockchain</li>
-                </ul>
+            {skill.length!==0?
+              <h3>TECHNICAL SKILLS</h3>:""}
+              <ul >
+               {skill.length!==0?skill.map((skills,index)=>(
+                
+                <li key={`skills-${index}`}>{skills.skill_name.charAt(0).toUpperCase()+skills.skill_name.slice(1)}</li>
+               
+              )):""}</ul>
             </section>
         </div>
+        </>
     )
-}
-export default Resume_c2
+}</>)}
+export default Resume_c2;

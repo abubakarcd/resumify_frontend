@@ -75,12 +75,11 @@ function Info(props) {
                       pattern="[A-Za-z\s]+"
                       title="Only alphabets and spaces are allowed"
                       value={userinfo.name}
-                      onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
-                      }
+                      onChange={(e) =>{
+                        const updateduserinfo={...userinfo};
+                        updateduserinfo.name=e.target.value;
+                        setuserinfo(updateduserinfo);
+                      }}
                     />
                   </div>
                   <div className="input-group">
@@ -91,12 +90,11 @@ function Info(props) {
                       name="profession"
                       placeholder="Enter your profession e.g Website developer"
                       value={userinfo.profession}
-                      onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
-                      }
+                      onChange={(e) =>{
+                        const updateduserinfo={...userinfo};
+                        updateduserinfo.profession=e.target.value;
+                        setuserinfo(updateduserinfo);
+                      }}
                     />
                   </div>
                   <div className="input-group">
@@ -111,10 +109,11 @@ function Info(props) {
                       title="Please enter a valid phone number"
                       value={userinfo.phone}
                       onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
+                        {
+                          const updateduserinfo={...userinfo};
+                          updateduserinfo.phone=e.target.value;
+                          setuserinfo(updateduserinfo);
+                        }
                       }
                     />
                   </div>
@@ -128,10 +127,11 @@ function Info(props) {
                       maxLength="100"
                       value={userinfo.email}
                       onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
+                        {
+                          const updateduserinfo={...userinfo};
+                          updateduserinfo.email=e.target.value;
+                          setuserinfo(updateduserinfo);
+                        }
                       }
                     />
                   </div>
@@ -146,10 +146,11 @@ function Info(props) {
                       title="Please enter a valid LinkedIn URL starting with https://www.linkedin.com/"
                       value={userinfo.linkedin}
                       onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
+                        {
+                          const updateduserinfo={...userinfo};
+                          updateduserinfo.linkedin=e.target.value;
+                          setuserinfo(updateduserinfo);
+                        }
                       }
                     />
                   </div>
@@ -162,10 +163,11 @@ function Info(props) {
                       rows="4"
                       value={userinfo.summary}
                       onChange={(e) =>
-                        setuserinfo({
-                          ...userinfo,
-                          [e.target.name]: e.target.value,
-                        })
+                        {
+                          const updateduserinfo={...userinfo};
+                          updateduserinfo.summary=e.target.value;
+                          setuserinfo(updateduserinfo);
+                        }
                       }
                     ></textarea>
                   </div>

@@ -39,6 +39,7 @@
   background-color: rgb(38 74 111);
   padding: 18px;
   padding-top: 38%;
+  color: rgb(193, 193, 193);
 }
 .resume_c3_left-column {
   padding: 18px;
@@ -51,6 +52,7 @@
 
 .resume_c3_summary h2, .resume_c3_experience h2, .resume_c3_achievements h2, .resume_c3_skills h2, .resume_c3_education h2, .resume_c3_certificates h2 {
   font-size: 1.2em;
+  border-bottom: 1px solid white;
 }
 
 .resume_c3_job,

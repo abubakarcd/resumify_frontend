@@ -9,7 +9,7 @@ body {
 /* Main resume container */
 .resume_c2_resume-container { /* Changed to .resume_c2_resume-container */
   background: white;
-  max-width: 800px;
+  width: 800px;
   margin: auto;
   padding: 20px;
   border-radius: 8px;
@@ -88,10 +88,11 @@ body {
   color: #777;
 }
 
-.resume_c2_resume-container .skills ul { /* Changed to .resume_c2_resume-container .skills ul */
+.resume_c2_resume-container .skills>ul { /* Changed to .resume_c2_resume-container .skills ul */
   list-style-type: circle;
-  padding: 0;
+  padding-left: 10px;
   display: flex;
+  font-family: Arial, Helvetica, sans-serif
   flex-wrap: wrap;
   gap: 10px 40px;
   margin-top: 0px;
