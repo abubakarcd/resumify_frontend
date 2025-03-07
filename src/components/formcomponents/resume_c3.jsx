@@ -105,7 +105,7 @@ function Resume_c3(props) {
                             </span>
                           </p>
 
-                          {/* chechking if responsibility exi+st or not */}
+                          {/* chechking if responsibility exist or not */}
                           {experience_loop.responsibility.length != 0
                             ? experience_loop.responsibility.map(
                                 (responsibilities, index) => (
