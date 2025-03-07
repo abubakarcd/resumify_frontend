@@ -84,6 +84,9 @@
 .resume_c3_achievement-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}.resume_c3_achievement h3{
+  font-weight: bold;
 }
 
 .resume_c3_achievement {
