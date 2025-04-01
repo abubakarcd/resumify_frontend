@@ -3,7 +3,11 @@ Resumify is a software developed to help users create their professional resumes
 To run the software, Follow the commands :
 
 1 ->  git clone https://github.com/abubakarcd/resumify_frontend.git
+
+
 2 ->  npm i
+
+
 3 ->  npm run dev 
 
 
